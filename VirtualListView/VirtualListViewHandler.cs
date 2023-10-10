@@ -2,6 +2,7 @@ using Microsoft.Maui.Adapters;
 
 namespace Microsoft.Maui;
 
+#if ANDROID || IOS || WINDOWS || MACCATALYST
 public partial class VirtualListViewHandler
 {
 	public static new IPropertyMapper<IVirtualListView, VirtualListViewHandler> ViewMapper = new PropertyMapper<IVirtualListView, VirtualListViewHandler>(Handlers.ViewHandler.ViewMapper)
@@ -115,5 +116,5 @@ public partial class VirtualListViewHandler
 	{
 		handler?.InvalidateData();
 	}
-
 }
+#endif
